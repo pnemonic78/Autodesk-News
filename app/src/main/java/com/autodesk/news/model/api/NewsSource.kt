@@ -16,5 +16,25 @@ data class NewsSource(
 
     @ColumnInfo(name = "name")
     @SerializedName("name")
-    val name: String
+    val name: String,
+
+    @SerializedName("description")
+    @ColumnInfo(name = "description")
+    val description: String? = null,
+
+    @SerializedName("url")
+    @ColumnInfo(name = "url")
+    val url: String? = null,
+
+    @SerializedName("category")
+    @ColumnInfo(name = "category")
+    val category: String? = null,
+
+    @SerializedName("language")
+    @ColumnInfo(name = "language")
+    val language: String? = null,
+
+    @SerializedName("country")
+    @ColumnInfo(name = "country")
+    val country: String? = null
 )
