@@ -27,5 +27,8 @@ task clean(type: Delete) {
 }
 
 ext {
+    dagger2_version = '2.16'
     kotlin_coroutines_version = '1.0.1'
+    okhttp_version = '3.8.1'
+    retrofit2_version = '2.3.0'
 }
