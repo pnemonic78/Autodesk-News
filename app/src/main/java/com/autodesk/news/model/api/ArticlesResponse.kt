@@ -1,7 +1,6 @@
-package com.knews.android.model
+package com.autodesk.news.model.api
 
 import com.google.gson.annotations.SerializedName
-import com.knews.android.data.NewsArticle
 
 /**
  * List of articles.
@@ -9,6 +8,10 @@ import com.knews.android.data.NewsArticle
 class ArticlesResponse(
     @SerializedName("status")
     val status: String,
+    @SerializedName("code")
+    val code: String? = null,
+    @SerializedName("message")
+    val message: String? = null,
     @SerializedName("totalResults")
     val totalResults: Int,
     @SerializedName("articles")

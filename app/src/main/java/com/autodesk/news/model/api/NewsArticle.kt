@@ -1,4 +1,4 @@
-package com.knews.android.data
+package com.autodesk.news.model.api
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

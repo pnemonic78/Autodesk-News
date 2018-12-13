@@ -1,9 +1,8 @@
-package com.knews.android.data
+package com.autodesk.news.model.api
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import com.google.gson.annotations.SerializedName
-import java.util.*
 
 /**
  * News source POJO.
