@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getTargetContext()
-        assertEquals("com.autodesk.news", appContext.packageName)
+        assertEquals("com.autodesk.news.debug", appContext.packageName)
     }
 }
