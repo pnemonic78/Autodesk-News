@@ -1,0 +1,266 @@
+{
+  "status": "ok",
+  "totalResults": 36,
+  "articles": [
+    {
+      "source": {
+        "id": "cnn",
+        "name": "CNN"
+      },
+      "author": "Jay Croft and Madeline Holcombe, CNN",
+      "title": "Authorities search for sender of global email bomb threats - CNN",
+      "description": "Authorities across three countries are trying to learn who sent dozens of email bomb threats Thursday afternoon, causing anxiety and business disruptions but no reported violence.",
+      "url": "https://www.cnn.com/2018/12/14/us/email-bomb-threats-search/index.html",
+      "urlToImage": "https://cdn.cnn.com/cnnnext/dam/assets/181204153836-hacking-super-tease.jpg",
+      "publishedAt": "2018-12-14T06:29:00Z",
+      "content": "(CNN) Authorities across four countries are trying to learn who sent dozens of email bomb threats Thursday afternoon, causing anxiety and business disruptions but no reported violence. Threats were reported across the United States, Canada, Australia and New … [+6437 chars]"
+    },
+    {
+      "source": {
+        "id": "engadget",
+        "name": "Engadget"
+      },
+      "author": "Richard Lawler",
+      "title": "Apple will update iPhones in China due to Qualcomm's patent claim - Engadget",
+      "description": "Qualcomm's attempt to block iPhone sales in China has forced Apple to push out a software update for older phones.",
+      "url": "https://www.engadget.com/2018/12/14/apple-china-iphone-qualcomm-patent/",
+      "urlToImage": "https://o.aolcdn.com/images/dims?thumbnail=1200%2C630&quality=80&image_uri=https%3A%2F%2Fo.aolcdn.com%2Fimages%2Fdims%3Fcrop%3D3264%252C2448%252C0%252C0%26quality%3D85%26format%3Djpg%26resize%3D1600%252C1200%26image_uri%3Dhttps%253A%252F%252Fs.yimg.com%252Fos%252Fcreatr-images%252F2018-12%252F5f387940-ff60-11e8-8ed6-927c10839d4b%26client%3Da1acac3e1b3290917d92%26signature%3D412899524ae23ad64361c9c69606a9bef607a8db&client=amp-blogside-v2&signature=539cc39ee9c1acd2a4aad3ccfaa6cd89fb0bc283",
+      "publishedAt": "2018-12-14T05:25:24Z",
+      "content": "Now that a Chinese court has granted Qualcomm an injunction against Apple that could block the sales of several older iPhone models (6S through X), Apple says it can fix things with a software update. When the ruling came down Apple said only devices running … [+586 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Youtube.com"
+      },
+      "author": null,
+      "title": "Chargers vs. Chiefs Week 15 Highlights | NFL 2018 - NFL",
+      "description": null,
+      "url": "https://www.youtube.com/watch?v=ICOcTyc2jlM",
+      "urlToImage": null,
+      "publishedAt": "2018-12-14T04:56:05Z",
+      "content": "[[getSimpleString(data.title)]] [[getSimpleString(data.text)]]"
+    },
+    {
+      "source": {
+        "id": "usa-today",
+        "name": "USA Today"
+      },
+      "author": "Andrew Dalton and Hillel Italie",
+      "title": "Nancy Wilson, Grammy-winning jazz singer, dies at 81 - USA TODAY",
+      "description": "Her manager confirmed Nancy Wilson died peacefully Thursday after a long illness at her home in Pioneertown, a California desert community near Joshua Tree National Park.",
+      "url": "https://www.usatoday.com/story/life/music/2018/12/13/nancy-wilson-grammy-winning-jazz-singer-dies-81/2308468002/",
+      "urlToImage": "https://www.gannett-cdn.com/presto/2018/12/14/USAT/7786f74f-0366-46a1-8fff-1a3f68f4da93-AP_Obit_Nancy_Wilson.JPG?crop=2039,1138,x0,y118&width=3200&height=1680&fit=bounds",
+      "publishedAt": "2018-12-14T04:54:00Z",
+      "content": "Grammy-winning jazz and pop singer Nancy Wilson has died at age 81. Her manager Devra Hall Levy tells The Associated Press late Thursday night, Dec. 13, 2018, that Wilson died peacefully after a long illness at her home in Pioneertown, a California desert com… [+5435 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Chiefs.com"
+      },
+      "author": null,
+      "title": "news Chiefs Fall to Chargers, 29-28, on Thursday Night Football The Chiefs lost a close - chiefs.com",
+      "description": "The Chiefs lost a close on Thursday night",
+      "url": "https://www.chiefs.com/news/chiefs-fall-to-chargers-29-28-on-thursday-night-football",
+      "urlToImage": "https://static.clubs.nfl.com/image/private/t_editorial_landscape_12_desktop/chiefs/v1i9wi2cpxbu7eccaltn",
+      "publishedAt": "2018-12-14T04:45:36Z",
+      "content": "Los Angeles Chargers vs Kansas City Chiefs at Arrowhead Stadium, Kansas City, Missouri on December 13, 2018. Los Angeles Chargers vs Kansas City Chiefs at Arrowhead Stadium, Kansas City, Missouri on December 13, 2018. Los Angeles Chargers vs Kansas City Chief… [+12727 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Xxlmag.com"
+      },
+      "author": "tonycenteno",
+      "title": "Kanye West Has More to Say to Drake in New Twitter Rant - XXLMAG.COM",
+      "description": "Kanye West continues to go off on Drake in new Twitter rant.",
+      "url": "http://www.xxlmag.com/news/2018/12/kanye-west-drake-new-twitter-rant/",
+      "urlToImage": "https://townsquare.media/site/812/files/2018/12/Kanye-West-Vs-Drake.jpg?w=600&h=0&zc=1&s=0&a=t&q=89",
+      "publishedAt": "2018-12-14T04:39:39Z",
+      "content": "Clearly, Kanye West is still infuriated at Drake. After demanding an apology from the Toronto native on Thursday night (Dec. 13), 'Ye is pulling off the gloves and laying all of his issues with Drizzy on his timeline. The \"One Minute\" rapper continued his Twi… [+3213 chars]"
+    },
+    {
+      "source": {
+        "id": "the-new-york-times",
+        "name": "The New York Times"
+      },
+      "author": null,
+      "title": "Trump Inaugural Fund and Super PAC Said to Be Scrutinized for Illegal Foreign Donations - The New York Times",
+      "description": "Federal prosecutors in New York and Washington are examining whether people from several Middle Eastern countries used straw donors to obscure donations to the funds.",
+      "url": "https://www.nytimes.com/2018/12/13/us/politics/trump-inauguration-investigation.html",
+      "urlToImage": "https://static01.nyt.com/images/2018/12/14/us/14DC-Investigate/14DC-Investigate-facebookJumbo.jpg",
+      "publishedAt": "2018-12-14T03:55:02Z",
+      "content": "The prosecutors in Manhattan were apparently following up on leads from their case against Michael D. Cohen, the presidents former longtime fixer. Mr. Cohen was sentenced on Wednesday to three years in prison, in part for organizing payments to cover up sex s… [+2096 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Aol.com"
+      },
+      "author": "William Laws",
+      "title": "NASA's Insight Lander takes its first selfie from Mars surface - AOL",
+      "description": "NASA’s lander InSight touched down on the Martian surface November 26 after hurling through space for six months, and now it's taken its first selfie.",
+      "url": "https://www.aol.com/article/news/2018/12/13/nasas-insight-lander-takes-its-first-selfie-from-the-surface-of-mars/23617722/",
+      "urlToImage": "https://o.aolcdn.com/images/dims3/GLOB/legacy_thumbnail/1028x675/format/jpg/quality/85/https%3A%2F%2Fs.yimg.com%2Fos%2Fcreatr-uploaded-images%2F2018-12%2F7315d1c0-ff4b-11e8-b39f-b0ac3ae5b116",
+      "publishedAt": "2018-12-14T02:53:57Z",
+      "content": "NASAs lander InSight touched down on the Martian surface November 26 after hurling through space for six months. Its been capturing photos and even sounds of the alien planet, but has finally gotten a decent shot of itself. NASA posted a photo to Twitter Wedn… [+7057 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Cleantechnica.com"
+      },
+      "author": "https://www.facebook.com/mr.kyle.field",
+      "title": "Tesla Drops A New Model 3 Easter Egg, Hints At More On The Way - CleanTechnica",
+      "description": "A new easter egg has surfaced in the Tesla Model 3 that pulls up a design sketch of the car. The easter egg can be conjured by tapping the Tesla T from the main screen to pull up the \"About Your Tesla\" screen. From there, just hold down on the Model 3 logo fo…",
+      "url": "https://cleantechnica.com/2018/12/13/tesla-drops-a-new-model-3-easter-egg-hints-at-more-on-the-way/",
+      "urlToImage": "https://cleantechnica.com/files/2018/12/tesla-model-3-sketch-egg-570x253.jpg",
+      "publishedAt": "2018-12-14T02:11:58Z",
+      "content": "December 13th, 2018 by Kyle Field A new easter egg has surfaced in the Tesla Model 3 that pulls up a design sketch of the car. The easter egg can be conjured by tapping the Tesla T from the main screen to pull up the “About Your Tesla” screen. From there, jus… [+2130 chars]"
+    },
+    {
+      "source": {
+        "id": "cnbc",
+        "name": "CNBC"
+      },
+      "author": "Huileng Tan",
+      "title": "China just reported industrial output and retail sales growth that missed expectations - CNBC",
+      "description": "China on Friday reported industrial output and retail sales growth for the month of November that missed expectations, data from the National Bureau of Statistics showed.",
+      "url": "https://www.cnbc.com/2018/12/14/china-reports-november-fixed-asset-investment-industrial-production.html",
+      "urlToImage": "https://fm.cnbc.com/applications/cnbc.com/resources/img/editorial/2018/11/11/105566964-1541912611738gettyimages-1065448656.1910x1000.jpeg",
+      "publishedAt": "2018-12-14T02:09:02Z",
+      "content": "China on Friday reported industrial output and retail sales growth for the month of November that missed expectations, data from the National Bureau of Statistics showed. div &gt; div.group &gt; p:first-child\"&gt; Industrial output in November grew 5.4 percen… [+1494 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Youtube.com"
+      },
+      "author": null,
+      "title": "Fight Night Milwaukee: Kevin Lee - I Must Avenge My Loss - UFC - Ultimate Fighting Championship",
+      "description": "Kevin Lee suffered a loss in his UFC debut in 2014 against Al Iaquinta, and has since ascended to the #4th ranked lightweight in the division. Now, he has th...",
+      "url": "https://www.youtube.com/watch?v=4jPwx-Eu-ro",
+      "urlToImage": "https://i.ytimg.com/vi/4jPwx-Eu-ro/maxresdefault.jpg",
+      "publishedAt": "2018-12-14T01:28:13Z",
+      "content": "Kevin Lee suffered a loss in his UFC debut in 2014 against Al Iaquinta, and has since ascended to the #4th ranked lightweight in the division. Now, he has the opportunity to avenge his debut loss in a rematch with Ragin' Al this Saturday at UFC Milwaukee on F… [+689 chars]"
+    },
+    {
+      "source": {
+        "id": "fox-news",
+        "name": "Fox News"
+      },
+      "author": "Associated Press",
+      "title": "EU leaders wary of May's pleas for help selling Brexit deal - Fox News",
+      "description": "British Prime Minister Theresa May implored European Union leaders Thursday to help her sell the Brexit divorce deal at home, only to be told that her proposals are not clear enough for the bloc to offer a helping hand now.",
+      "url": "https://www.foxnews.com/world/eu-leaders-wary-of-mays-pleas-for-help-selling-brexit-deal",
+      "urlToImage": "https://static.foxnews.com/foxnews.com/content/uploads/2018/12/ContentBroker_contentid-cb8f59b0de6646889c9f65f1e043295d.png",
+      "publishedAt": "2018-12-14T01:24:59Z",
+      "content": "BRUSSELS British Prime Minister Theresa May implored European Union leaders Thursday to help her sell the Brexit divorce deal at home, only to be told that her proposals are not clear enough for the bloc to offer a helping hand now. Instead, the EU said it wo… [+4752 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Tvline.com"
+      },
+      "author": "Dave Nemetz, Dave Nemetz",
+      "title": "'Bull': Eliza Dushku Complained of Harassment by Michael Weatherly - TVLine",
+      "description": "CBS’ Bull is having some legal issues of his own.",
+      "url": "https://tvline.com/2018/12/13/bull-eliza-dushku-sexual-harassment-michael-weatherly-cbs/",
+      "urlToImage": "https://pmctvline2.files.wordpress.com/2018/12/bull-eliza-dushku-sexual-harassment.jpg?w=1024",
+      "publishedAt": "2018-12-14T01:22:00Z",
+      "content": "CBS’ Bull is having some legal issues of his own. According to a report by the New York Times, actress Eliza Dushku, who joined the cast of the CBS legal drama late in Season 1 as defense attorney J.P. Nunnelly, lodged a formal complaint with the network afte… [+1765 chars]"
+    },
+    {
+      "source": {
+        "id": "politico",
+        "name": "Politico"
+      },
+      "author": "MICHAEL STRATFORD",
+      "title": "DeVos cancels $150M in student loan debt after losing court battle - POLITICO",
+      "description": "The move comes as DeVos is being forced to implement a package of regulations that created more protections for student loan borrowers.",
+      "url": "https://www.politico.com/story/2018/12/13/betsy-devos-student-loans-1063442",
+      "urlToImage": "https://static.politico.com/d4/b4/393b3abf4eb09e5b8c56c4b57935/181213-betsy-devos-gtty-773.jpg",
+      "publishedAt": "2018-12-14T00:57:00Z",
+      "content": "A federal judge in September ruled that Betsy DeVos' efforts to stop the 2016 borrower defense regulations from taking effect was illegal. | Saul Loeb/AFP/Getty Images The Trump administration said Thursday it will cancel thousands of borrowers federal studen… [+3251 chars]"
+    },
+    {
+      "source": {
+        "id": "abc-news",
+        "name": "ABC News"
+      },
+      "author": "The Associated Press",
+      "title": "Republican sparks pushback after vaccine comment - ABC News",
+      "description": "Get breaking national and world news, broadcast video coverage, and exclusive interviews. Find the top news online at ABC news.",
+      "url": "https://abcnews.go.com/Health/wireStory/tennessee-republican-sparks-pushback-vaccine-comment-59810850",
+      "urlToImage": "https://s.abcnews.com/images/Health/WireAP_47cb2b5a0d964e77b9ec6fd04f509cb5_16x9_992.jpg",
+      "publishedAt": "2018-12-14T00:51:00Z",
+      "content": "A Tennessee physician recently elected to Congress received criticism Thursday from top state leaders for alleging without evidence that vaccines may cause autism. \"Let me say this about autism,\" said Republican U.S. Rep.-elect Mark Green of Ashland City in a… [+2208 chars]"
+    },
+    {
+      "source": {
+        "id": "reuters",
+        "name": "Reuters"
+      },
+      "author": "Hideyuki Sano",
+      "title": "Asian shares jolted by weak Chinese data, growth risks - Reuters",
+      "description": "Asian shares tumbled on Friday after China reported a set of weak data, fanning fresh worries of a slowdown in the world's second-biggest economy and leaving investors fretting over the wider impact of a yet unresolved Sino-U.S. trade dispute.",
+      "url": "https://www.reuters.com/article/us-global-markets/asian-shares-jolted-by-weak-chinese-data-growth-risks-idUSKBN1OD021",
+      "urlToImage": "https://s4.reutersmedia.net/resources/r/?m=02&d=20181214&t=2&i=1335012063&w=1200&r=LYNXMPEEBD01U",
+      "publishedAt": "2018-12-14T00:48:00Z",
+      "content": "TOKYO (Reuters) - Asian shares tumbled on Friday after China reported a set of weak data, fanning fresh worries of a slowdown in the world’s second-biggest economy and leaving investors fretting over the wider impact of a yet unresolved Sino-U.S. trade disput… [+4530 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Nintendolife.com"
+      },
+      "author": "Nintendo Life",
+      "title": "Half Of All Switch Owners In The US Have Bought Zelda, Mario And Mario Kart - Nintendo Life",
+      "description": "\"That's never happened in U.S. video game history\"",
+      "url": "http://www.nintendolife.com/news/2018/12/half_of_all_switch_owners_in_the_us_have_bought_zelda_mario_and_mario_kart",
+      "urlToImage": "http://images.nintendolife.com/news/2018/12/half_of_all_switch_owners_in_the_us_have_bought_zelda_mario_and_mario_kart/large.jpg",
+      "publishedAt": "2018-12-14T00:45:00Z",
+      "content": "Following the conclusion of the 2018 Game Awards last week, Nintendo of America's President Reggie Fils-Aimé had a lot to say to IGN about the current state of the Switch. One of the more interesting facts he mentioned was how half of all Nintendo Switch owne… [+1469 chars]"
+    },
+    {
+      "source": {
+        "id": "the-washington-post",
+        "name": "The Washington Post"
+      },
+      "author": "https://www.facebook.com/madebonis",
+      "title": "‘Her skills are real’: How Pelosi put down a Democratic rebellion in bid for speaker - The Washington Post",
+      "description": "While dissident Democrats scrambled to find an alternative to Pelosi, the woman who has led the party for 16 years methodically worked to undermine the opposition.",
+      "url": "https://www.washingtonpost.com/powerpost/her-skills-are-real-how-pelosi-put-down-a-democratic-rebellion-in-bid-for-speaker/2018/12/13/27bbc7c6-fefa-11e8-ad40-cdfd0e0dd65a_story.html",
+      "urlToImage": "https://www.washingtonpost.com/resizer/9xKoddzUErw1rrqHJot58b5Z_kw=/1484x0/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/KOD4S2H7GYI6RLKAZX6Q4DOWLI.jpg",
+      "publishedAt": "2018-12-14T00:25:05Z",
+      "content": "Rep. Nancy Pelosis opponents knew they had an opportunity. But what they really needed was an alternative. This past summer, they thought they had identified the perfect candidate to replace Pelosi (D-Calif.) as the partys House leader: Rep. Karen Bass, a res… [+10935 chars]"
+    },
+    {
+      "source": {
+        "id": "politico",
+        "name": "Politico"
+      },
+      "author": "JASON SCHWARTZ",
+      "title": "Washington Post to run full-page ad on Khashoggi killing - POLITICO",
+      "description": "Publisher Fred Ryan said the company would keep up its push &quot;until meaningful action is taken&quot; in response to the Saudi journalist's death.",
+      "url": "https://www.politico.com/story/2018/12/13/washington-post-ad-friday-jamal-khashoggi-1063440",
+      "urlToImage": "https://static.politico.com/74/60/966f0d524dbd9e7df22f120c3ddd/181213-wapo-gty-773.jpg",
+      "publishedAt": "2018-12-14T00:21:00Z",
+      "content": "\"Many people are frustrated and feel betrayed by the Trump administrations apparent effort to sweep Jamals killing under the rug and its failure to stand up for Americas values,\" Washington Post publisher publisher Fred Ryan wrote in the memo. | Brendan Smial… [+2964 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Slate.com"
+      },
+      "author": "Aaron Mak",
+      "title": "How to Watch the Geminid Meteor Shower - Slate",
+      "description": "A short guide to watching the Geminid meteor shower.",
+      "url": "https://slate.com/technology/2018/12/geminid-meteor-shower-when-where-watch.html",
+      "urlToImage": "https://compote.slate.com/images/f1e94d1c-a2eb-473b-b2f8-93de2e18a35e.jpeg?width=780&height=520&rect=3600x2400&offset=0x0",
+      "publishedAt": "2018-12-14T00:02:00Z",
+      "content": "The Geminid meteor shower is visible every year in December. The Weirdest Part of This New Meat Allergy Is That We Know Whats Causing It Republicans Kept Embarrassing Themselves While Trying to Get Googles CEO to Admit the Company Was Biased Against Conservat… [+1722 chars]"
+    }
+  ]
+}
