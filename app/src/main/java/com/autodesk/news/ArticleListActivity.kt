@@ -1,11 +1,14 @@
 package com.autodesk.news
 
+import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.autodesk.news.dummy.DummyContent
+import com.autodesk.news.model.api.ArticlesResponse
+import com.google.gson.GsonBuilder
 import kotlinx.android.synthetic.main.activity_article_list.*
 import kotlinx.android.synthetic.main.article_list.*
+import java.io.InputStreamReader
 
 /**
  * An activity representing a list of Articles. This activity
@@ -42,6 +45,14 @@ class ArticleListActivity : AppCompatActivity() {
     }
 
     private fun setupRecyclerView(recyclerView: RecyclerView) {
-        recyclerView.adapter = ArticleViewAdapter(this, DummyContent.ITEMS, twoPane)
+        val context: Context = this
+        val input = context.assets.open("top-headlines.json")
+        val reader = InputStreamReader(input)
+        val gson = GsonBuilder().create()
+        val response = gson.fromJson<ArticlesResponse>(reader, ArticlesResponse::class.java)
+        val items = response.articles
+
+        val adapter = ArticleViewAdapter(this, items, twoPane)
+        recyclerView.adapter = adapter
     }
 }

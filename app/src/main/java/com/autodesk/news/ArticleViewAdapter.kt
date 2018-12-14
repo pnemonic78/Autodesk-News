@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.autodesk.news.dummy.DummyContent
+import com.autodesk.news.model.api.NewsArticle
 
 /**
  * View adapter for articles.
@@ -14,20 +14,25 @@ import com.autodesk.news.dummy.DummyContent
  */
 class ArticleViewAdapter(
     private val parentActivity: ArticleListActivity,
-    private val values: List<DummyContent.DummyItem>,
+    private val values: List<NewsArticle>,
     private val twoPane: Boolean
 ) :
     RecyclerView.Adapter<ArticleViewHolder>() {
 
+//    var values: List<NewsArticle>=ArrayList<NewsArticle>()
+    //        set(value) {
+//            field = values
+//            notifyDataSetChanged()
+//        }
     private val onClickListener: View.OnClickListener
 
     init {
         onClickListener = View.OnClickListener { v ->
-            val item = v.tag as DummyContent.DummyItem
+            val item = v.tag as NewsArticle
             if (twoPane) {
                 val fragment = ArticleDetailFragment().apply {
                     arguments = Bundle().apply {
-                        putString(ArticleDetailFragment.ARG_ITEM_ID, item.id)
+                        putString(ArticleDetailFragment.ARG_ITEM_URL, item.url)
                     }
                 }
                 parentActivity.supportFragmentManager
@@ -36,7 +41,7 @@ class ArticleViewAdapter(
                     .commit()
             } else {
                 val intent = Intent(v.context, ArticleDetailActivity::class.java).apply {
-                    putExtra(ArticleDetailFragment.ARG_ITEM_ID, item.id)
+                    putExtra(ArticleDetailFragment.ARG_ITEM_URL, item.url)
                 }
                 v.context.startActivity(intent)
             }
@@ -51,11 +56,9 @@ class ArticleViewAdapter(
 
     override fun onBindViewHolder(holder: ArticleViewHolder, position: Int) {
         val item = values[position]
-        holder.idView.text = item.id
-        holder.contentView.text = item.content
+        holder.bind(item)
 
         with(holder.itemView) {
-            tag = item
             setOnClickListener(onClickListener)
         }
     }

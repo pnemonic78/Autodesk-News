@@ -37,8 +37,8 @@ class ArticleDetailActivity : AppCompatActivity() {
             val fragment = ArticleDetailFragment().apply {
                 arguments = Bundle().apply {
                     putString(
-                        ArticleDetailFragment.ARG_ITEM_ID,
-                        intent.getStringExtra(ArticleDetailFragment.ARG_ITEM_ID)
+                        ArticleDetailFragment.ARG_ITEM_URL,
+                        intent.getStringExtra(ArticleDetailFragment.ARG_ITEM_URL)
                     )
                 }
             }
