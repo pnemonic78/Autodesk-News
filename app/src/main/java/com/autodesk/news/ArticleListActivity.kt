@@ -5,12 +5,9 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.autodesk.news.model.api.ArticlesResponse
 import com.autodesk.news.model.api.NewsArticle
-import com.google.gson.GsonBuilder
 import kotlinx.android.synthetic.main.activity_article_list.*
 import kotlinx.android.synthetic.main.article_list.*
-import java.io.InputStreamReader
 
 /**
  * An activity representing a list of Articles. This activity
@@ -20,13 +17,16 @@ import java.io.InputStreamReader
  * item details. On tablets, the activity presents the list of items and
  * item details side-by-side using two vertical panes.
  */
-class ArticleListActivity : AppCompatActivity(), ArticleViewAdapter.ArticleViewListener {
+class ArticleListActivity : AppCompatActivity(), ArticleViewAdapter.ArticleViewListener, ArticleListContract.View {
 
     /**
      * Whether or not the activity is in two-pane mode, i.e. running on a tablet
      * device.
      */
     private var twoPane: Boolean = false
+
+    private val presenter = ArticleListPresenter()
+    private val adapter = ArticleViewAdapter(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,9 +44,23 @@ class ArticleListActivity : AppCompatActivity(), ArticleViewAdapter.ArticleViewL
         }
 
         setupRecyclerView(article_list)
+        presenter.attachView(this)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        presenter.detachView(this)
     }
 
     override fun onClickArticle(article: NewsArticle) {
+       presenter.onArticleClicked(article)
+    }
+
+    override fun showArticles(articles: List<NewsArticle>) {
+        adapter.items = articles
+    }
+
+    override fun showArticleDetails(article: NewsArticle) {
         if (twoPane) {
             val fragment = ArticleDetailFragment().apply {
                 arguments = Bundle().apply {
@@ -67,18 +81,11 @@ class ArticleListActivity : AppCompatActivity(), ArticleViewAdapter.ArticleViewL
         }
     }
 
-    private fun setupRecyclerView(recyclerView: RecyclerView) {
-        val items = createDummyData()
-        val adapter = ArticleViewAdapter(this, items)
-        recyclerView.adapter = adapter
+    override fun getContext(): Context {
+        return this
     }
 
-    private fun createDummyData(): List<NewsArticle> {
-        val context: Context = this
-        val input = context.assets.open("top-headlines.json")
-        val reader = InputStreamReader(input)
-        val gson = GsonBuilder().create()
-        val response = gson.fromJson<ArticlesResponse>(reader, ArticlesResponse::class.java)
-        return response.articles
+    private fun setupRecyclerView(recyclerView: RecyclerView) {
+        recyclerView.adapter = adapter
     }
 }
