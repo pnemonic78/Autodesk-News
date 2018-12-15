@@ -4,9 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebViewClient
 import androidx.fragment.app.Fragment
-import com.autodesk.news.model.api.NewsArticle
-import kotlinx.android.synthetic.main.activity_article_detail.*
+import kotlinx.android.synthetic.main.article_detail.view.*
 
 /**
  * A fragment representing a single Article detail screen.
@@ -17,9 +17,9 @@ import kotlinx.android.synthetic.main.activity_article_detail.*
 class ArticleDetailFragment : Fragment() {
 
     /**
-     * The dummy content this fragment is presenting.
+     * The content this fragment is presenting.
      */
-    private var item: NewsArticle? = null
+    private var item: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,8 +29,7 @@ class ArticleDetailFragment : Fragment() {
                 // Load the dummy content specified by the fragment
                 // arguments. In a real-world scenario, use a Loader
                 // to load content from a content provider.
-                item = null//TODO DummyContent.ITEM_MAP[it.getString(ARG_ITEM_URL)]
-                activity?.toolbar_layout?.title = item?.title
+                item = it.getString(ARG_ITEM_URL)
             }
         }
     }
@@ -41,9 +40,15 @@ class ArticleDetailFragment : Fragment() {
     ): View? {
         val rootView = inflater.inflate(R.layout.article_detail, container, false)
 
-        // Show the dummy content as text in a TextView.
-        item?.let {
-           //TODO rootView.article_detail.text = it.details
+        if (!item.isNullOrEmpty()) {
+            val webView = rootView.article_detail
+            webView.settings.apply {
+                javaScriptEnabled = true
+                domStorageEnabled = true
+            }
+
+            webView.webViewClient = WebViewClient()
+            webView.loadUrl(item)
         }
 
         return rootView
@@ -51,9 +56,12 @@ class ArticleDetailFragment : Fragment() {
 
     companion object {
         /**
-         * The fragment argument representing the item ID that this fragment
-         * represents.
+         * The fragment argument representing the item URL that this fragment represents.
          */
         const val ARG_ITEM_URL = "item_url"
+        /**
+         * The fragment argument representing the item title that this fragment represents.
+         */
+        const val ARG_ITEM_TITLE = "item_title"
     }
 }

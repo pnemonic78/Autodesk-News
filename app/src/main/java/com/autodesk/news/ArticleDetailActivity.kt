@@ -43,6 +43,10 @@ class ArticleDetailActivity : AppCompatActivity() {
                 }
             }
 
+            if (intent.hasExtra(ArticleDetailFragment.ARG_ITEM_TITLE)) {
+                title = intent.getStringExtra(ArticleDetailFragment.ARG_ITEM_TITLE)
+            }
+
             supportFragmentManager.beginTransaction()
                 .add(R.id.article_detail_container, fragment)
                 .commit()

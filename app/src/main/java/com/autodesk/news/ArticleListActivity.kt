@@ -51,6 +51,7 @@ class ArticleListActivity : AppCompatActivity(), ArticleViewAdapter.ArticleViewL
             val fragment = ArticleDetailFragment().apply {
                 arguments = Bundle().apply {
                     putString(ArticleDetailFragment.ARG_ITEM_URL, article.url)
+                    putString(ArticleDetailFragment.ARG_ITEM_TITLE, article.title)
                 }
             }
             supportFragmentManager
@@ -60,6 +61,7 @@ class ArticleListActivity : AppCompatActivity(), ArticleViewAdapter.ArticleViewL
         } else {
             val intent = Intent(this, ArticleDetailActivity::class.java).apply {
                 putExtra(ArticleDetailFragment.ARG_ITEM_URL, article.url)
+                putExtra(ArticleDetailFragment.ARG_ITEM_TITLE, article.title)
             }
             startActivity(intent)
         }
