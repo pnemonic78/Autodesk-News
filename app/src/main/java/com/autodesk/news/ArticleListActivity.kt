@@ -1,13 +1,15 @@
 package com.autodesk.news
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.autodesk.news.api.NewsService
+import com.autodesk.news.di.components.DaggerApplicationComponent
 import com.autodesk.news.model.api.NewsArticle
 import kotlinx.android.synthetic.main.activity_article_list.*
 import kotlinx.android.synthetic.main.article_list.*
+import javax.inject.Inject
 
 /**
  * An activity representing a list of Articles. This activity
@@ -25,11 +27,16 @@ class ArticleListActivity : AppCompatActivity(), ArticleViewAdapter.ArticleViewL
      */
     private var twoPane: Boolean = false
 
-    private val presenter = ArticleListPresenter()
+    private lateinit var presenter: ArticleListContract.Presenter
     private val adapter = ArticleViewAdapter(this)
+
+    @Inject
+    lateinit var service: NewsService
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        DaggerApplicationComponent.create().inject(this)
+
         setContentView(R.layout.activity_article_list)
 
         setSupportActionBar(toolbar)
@@ -44,6 +51,8 @@ class ArticleListActivity : AppCompatActivity(), ArticleViewAdapter.ArticleViewL
         }
 
         setupRecyclerView(article_list)
+
+        presenter = ArticleListPresenter(service)
         presenter.attachView(this)
     }
 
@@ -53,7 +62,7 @@ class ArticleListActivity : AppCompatActivity(), ArticleViewAdapter.ArticleViewL
     }
 
     override fun onClickArticle(article: NewsArticle) {
-       presenter.onArticleClicked(article)
+        presenter.onArticleClicked(article)
     }
 
     override fun showArticles(articles: List<NewsArticle>) {
@@ -69,9 +78,9 @@ class ArticleListActivity : AppCompatActivity(), ArticleViewAdapter.ArticleViewL
                 }
             }
             supportFragmentManager
-                .beginTransaction()
-                .replace(R.id.article_detail_container, fragment)
-                .commit()
+                    .beginTransaction()
+                    .replace(R.id.article_detail_container, fragment)
+                    .commit()
         } else {
             val intent = Intent(this, ArticleDetailActivity::class.java).apply {
                 putExtra(ArticleDetailContract.ARG_ITEM_URL, article.url)
@@ -79,10 +88,6 @@ class ArticleListActivity : AppCompatActivity(), ArticleViewAdapter.ArticleViewL
             }
             startActivity(intent)
         }
-    }
-
-    override fun getContext(): Context {
-        return this
     }
 
     private fun setupRecyclerView(recyclerView: RecyclerView) {
