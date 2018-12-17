@@ -64,8 +64,8 @@ class ArticleListActivity : AppCompatActivity(), ArticleViewAdapter.ArticleViewL
         if (twoPane) {
             val fragment = ArticleDetailFragment().apply {
                 arguments = Bundle().apply {
-                    putString(ArticleDetailFragment.ARG_ITEM_URL, article.url)
-                    putString(ArticleDetailFragment.ARG_ITEM_TITLE, article.title)
+                    putString(ArticleDetailContract.ARG_ITEM_URL, article.url)
+                    putString(ArticleDetailContract.ARG_ITEM_TITLE, article.title)
                 }
             }
             supportFragmentManager
@@ -74,8 +74,8 @@ class ArticleListActivity : AppCompatActivity(), ArticleViewAdapter.ArticleViewL
                 .commit()
         } else {
             val intent = Intent(this, ArticleDetailActivity::class.java).apply {
-                putExtra(ArticleDetailFragment.ARG_ITEM_URL, article.url)
-                putExtra(ArticleDetailFragment.ARG_ITEM_TITLE, article.title)
+                putExtra(ArticleDetailContract.ARG_ITEM_URL, article.url)
+                putExtra(ArticleDetailContract.ARG_ITEM_TITLE, article.title)
             }
             startActivity(intent)
         }

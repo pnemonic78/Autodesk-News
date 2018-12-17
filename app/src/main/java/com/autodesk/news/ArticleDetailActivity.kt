@@ -37,14 +37,14 @@ class ArticleDetailActivity : AppCompatActivity() {
             val fragment = ArticleDetailFragment().apply {
                 arguments = Bundle().apply {
                     putString(
-                        ArticleDetailFragment.ARG_ITEM_URL,
-                        intent.getStringExtra(ArticleDetailFragment.ARG_ITEM_URL)
+                        ArticleDetailContract.ARG_ITEM_URL,
+                        intent.getStringExtra(ArticleDetailContract.ARG_ITEM_URL)
                     )
                 }
             }
 
-            if (intent.hasExtra(ArticleDetailFragment.ARG_ITEM_TITLE)) {
-                title = intent.getStringExtra(ArticleDetailFragment.ARG_ITEM_TITLE)
+            if (intent.hasExtra(ArticleDetailContract.ARG_ITEM_TITLE)) {
+                title = intent.getStringExtra(ArticleDetailContract.ARG_ITEM_TITLE)
             }
 
             supportFragmentManager.beginTransaction()

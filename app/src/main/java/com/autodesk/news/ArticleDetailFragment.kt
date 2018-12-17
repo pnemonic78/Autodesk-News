@@ -1,11 +1,14 @@
 package com.autodesk.news
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebViewClient
 import androidx.fragment.app.Fragment
+import com.autodesk.news.ArticleDetailContract.Companion.ARG_ITEM_URL
+import com.autodesk.news.model.api.NewsArticle
 import kotlinx.android.synthetic.main.article_detail.view.*
 
 /**
@@ -14,12 +17,9 @@ import kotlinx.android.synthetic.main.article_detail.view.*
  * in two-pane mode (on tablets) or a [ArticleDetailActivity]
  * on handsets.
  */
-class ArticleDetailFragment : Fragment() {
+class ArticleDetailFragment : Fragment(), ArticleDetailContract.View {
 
-    /**
-     * The content this fragment is presenting.
-     */
-    private var item: String? = null
+    private val presenter = ArticleDetailPresenter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +29,7 @@ class ArticleDetailFragment : Fragment() {
                 // Load the dummy content specified by the fragment
                 // arguments. In a real-world scenario, use a Loader
                 // to load content from a content provider.
-                item = it.getString(ARG_ITEM_URL)
+                presenter.setArticleUrl(it.getString(ARG_ITEM_URL))
             }
         }
     }
@@ -38,30 +38,33 @@ class ArticleDetailFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val rootView = inflater.inflate(R.layout.article_detail, container, false)
-
-        if (!item.isNullOrEmpty()) {
-            val webView = rootView.article_detail
-            webView.settings.apply {
-                javaScriptEnabled = true
-                domStorageEnabled = true
-            }
-
-            webView.webViewClient = WebViewClient()
-            webView.loadUrl(item)
-        }
-
-        return rootView
+        return inflater.inflate(R.layout.article_detail, container, false)
     }
 
-    companion object {
-        /**
-         * The fragment argument representing the item URL that this fragment represents.
-         */
-        const val ARG_ITEM_URL = "item_url"
-        /**
-         * The fragment argument representing the item title that this fragment represents.
-         */
-        const val ARG_ITEM_TITLE = "item_title"
+    @SuppressLint("SetJavaScriptEnabled")
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val webView = view.article_detail
+        webView.settings.apply {
+            javaScriptEnabled = true
+            domStorageEnabled = true
+        }
+        webView.webViewClient = WebViewClient()
+
+        presenter.attachView(this)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        presenter.detachView(this)
+    }
+
+    override fun showArticle(article: NewsArticle) {
+        showArticle(article.url!!)
+    }
+
+    override fun showArticle(articleUrl: String) {
+        view?.article_detail?.loadUrl(articleUrl)
     }
 }
