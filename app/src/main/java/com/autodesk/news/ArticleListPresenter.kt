@@ -19,7 +19,6 @@ class ArticleListPresenter(private val service: NewsService) : ArticleListContra
 
     override fun attachView(view: ArticleListContract.View) {
         this.view = view
-        fetchArticles()
     }
 
     override fun detachView(view: ArticleListContract.View) {
@@ -29,6 +28,10 @@ class ArticleListPresenter(private val service: NewsService) : ArticleListContra
 
     override fun onArticleClicked(article: NewsArticle) {
         view?.showArticleDetails(article)
+    }
+
+    override fun refreshArticles() {
+        fetchArticles()
     }
 
     private fun fetchArticles() {

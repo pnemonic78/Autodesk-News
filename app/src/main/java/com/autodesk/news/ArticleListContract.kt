@@ -15,5 +15,6 @@ interface ArticleListContract : BaseContract {
 
     interface Presenter : BaseContract.Presenter<View> {
         fun onArticleClicked(article: NewsArticle)
+        fun refreshArticles()
     }
 }
