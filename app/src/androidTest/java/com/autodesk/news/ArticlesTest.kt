@@ -50,7 +50,6 @@ class ArticlesTest {
     @Test
     fun responseTopHeadlines() {
         val context = InstrumentationRegistry.getContext()
-        //val input = context.resources.openRawResource(R.raw.errors)
         val input = context.assets.open("top-headlines.json")
         assertNotNull(input)
         val reader = InputStreamReader(input)
