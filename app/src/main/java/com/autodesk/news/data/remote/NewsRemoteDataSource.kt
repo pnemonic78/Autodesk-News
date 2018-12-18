@@ -17,11 +17,11 @@ class NewsRemoteDataSource(private val service: NewsService) : NewsDataSource {
 
     override fun getTopHeadlines(country: String?, language: String?, sources: String?): Observable<List<NewsArticle>> {
         return service.getTopHeadlines(country, language, sources)
-            .map { response ->
+            .flatMapObservable { response ->
                 if (response.status == ArticlesResponse.STATUS_OK) {
-                    response.articles
+                    Observable.just(response.articles)
                 } else {
-                    emptyList()
+                    Observable.empty()
                 }
             }
     }
