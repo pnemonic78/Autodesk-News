@@ -1,7 +1,6 @@
 package com.autodesk.news
 
-import com.autodesk.news.api.NewsService
-import com.autodesk.news.model.api.ArticlesResponse
+import com.autodesk.news.data.NewsRepository
 import com.autodesk.news.model.api.NewsArticle
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
@@ -10,9 +9,8 @@ import io.reactivex.schedulers.Schedulers
 
 /**
  * Presenter of news articles.
- * @author Moshe on 2018/12/15.
  */
-class ArticleListPresenter(private val service: NewsService) : ArticleListContract.Presenter {
+class ArticleListPresenter(private val repository: NewsRepository) : ArticleListContract.Presenter {
 
     private val disposables = CompositeDisposable()
     private var view: ArticleListContract.View? = null
@@ -32,14 +30,10 @@ class ArticleListPresenter(private val service: NewsService) : ArticleListContra
     }
 
     private fun fetchArticles() {
-        service.getTopHeadlines(sources = SOURCES)
+        repository.getTopHeadlines(sources = SOURCES)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe { response ->
-                if (response.status == ArticlesResponse.STATUS_OK) {
-                    view?.showArticles(response.articles)
-                }
-            }
+            .subscribe { view?.showArticles(it) }
             .addTo(disposables)
     }
 

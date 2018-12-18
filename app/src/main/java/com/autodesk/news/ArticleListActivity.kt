@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.autodesk.news.api.NewsService
+import com.autodesk.news.data.NewsRepository
 import com.autodesk.news.di.components.DaggerApplicationComponent
 import com.autodesk.news.model.api.NewsArticle
 import kotlinx.android.synthetic.main.activity_article_list.*
@@ -31,7 +31,7 @@ class ArticleListActivity : AppCompatActivity(), ArticleViewAdapter.ArticleViewL
     private val adapter = ArticleViewAdapter(this)
 
     @Inject
-    lateinit var service: NewsService
+    lateinit var repository: NewsRepository
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,7 +52,7 @@ class ArticleListActivity : AppCompatActivity(), ArticleViewAdapter.ArticleViewL
 
         setupRecyclerView(article_list)
 
-        presenter = ArticleListPresenter(service)
+        presenter = ArticleListPresenter(repository)
         presenter.attachView(this)
     }
 
