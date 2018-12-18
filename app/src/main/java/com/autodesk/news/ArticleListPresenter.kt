@@ -32,14 +32,19 @@ class ArticleListPresenter(private val service: NewsService) : ArticleListContra
     }
 
     private fun fetchArticles() {
-        service.getTopHeadlines()
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe { response ->
-                    if (response.status == ArticlesResponse.STATUS_OK) {
-                        view?.showArticles(response.articles)
-                    }
+        service.getTopHeadlines(sources = SOURCES)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe { response ->
+                if (response.status == ArticlesResponse.STATUS_OK) {
+                    view?.showArticles(response.articles)
                 }
-                .addTo(disposables)
+            }
+            .addTo(disposables)
+    }
+
+    companion object {
+        //TODO let the user pick the source.
+        private const val SOURCES = "cnn"
     }
 }
