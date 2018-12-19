@@ -2,7 +2,6 @@ package com.autodesk.arch
 
 /**
  * Base MVP contract.
- * @author Moshe on 2018/12/15.
  */
 interface BaseContract {
 

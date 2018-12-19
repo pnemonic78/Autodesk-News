@@ -12,7 +12,6 @@ import kotlinx.android.synthetic.main.article_list_content.view.*
 
 /**
  * View holder for an article.
- * @author moshe on 2018/12/14.
  */
 class ArticleViewHolder(view: View, onClickListener: View.OnClickListener? = null) : RecyclerView.ViewHolder(view) {
     private val logoView: ImageView = view.image
@@ -43,5 +42,12 @@ class ArticleViewHolder(view: View, onClickListener: View.OnClickListener? = nul
                 context, article.publishedAt.time,
                 DateUtils.FORMAT_SHOW_DATE.or(DateUtils.FORMAT_SHOW_TIME)
             ) else null
+    }
+
+    fun clear() {
+        logoView.setImageDrawable(null)
+        titleView.text = null
+        descriptionView.text = null
+        publishedView.text = null
     }
 }

@@ -61,12 +61,17 @@ class ArticleListActivity : AppCompatActivity(), ArticleViewAdapter.ArticleViewL
         presenter.detachView(this)
     }
 
+    override fun onResume() {
+        super.onResume()
+        presenter.refreshArticles()
+    }
+
     override fun onClickArticle(article: NewsArticle) {
         presenter.onArticleClicked(article)
     }
 
     override fun showArticles(articles: List<NewsArticle>) {
-        adapter.items = articles
+        adapter.submitList(articles)
     }
 
     override fun showArticleDetails(article: NewsArticle) {

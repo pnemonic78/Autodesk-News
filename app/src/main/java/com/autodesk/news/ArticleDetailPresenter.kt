@@ -2,7 +2,6 @@ package com.autodesk.news
 
 /**
  * Presenter of a single news article.
- * @author Moshe on 2018/12/15.
  */
 class ArticleDetailPresenter : ArticleDetailContract.Presenter {
 

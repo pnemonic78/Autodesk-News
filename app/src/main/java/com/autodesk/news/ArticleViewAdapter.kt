@@ -3,24 +3,18 @@ package com.autodesk.news
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import com.autodesk.news.model.api.NewsArticle
 
 /**
  * View adapter for articles.
- * @author moshe on 2018/12/14.
  */
 class ArticleViewAdapter(
-    private val listener: ArticleViewListener? = null,
-    values: List<NewsArticle>? = null
+    private val listener: ArticleViewListener? = null
 ) :
-    RecyclerView.Adapter<ArticleViewHolder>() {
+    ListAdapter<NewsArticle,ArticleViewHolder>(DIFF_CALLBACK) {
 
-    var items: List<NewsArticle> = values ?: emptyList()
-        set(value) {
-            field = value
-            notifyDataSetChanged()
-        }
     private val onClickListener: View.OnClickListener
 
     init {
@@ -37,13 +31,28 @@ class ArticleViewAdapter(
     }
 
     override fun onBindViewHolder(holder: ArticleViewHolder, position: Int) {
-        val item = items[position]
-        holder.bind(item)
+        val item = getItem(position)
+        if (item != null) {
+            holder.bind(item)
+        } else {
+            holder.clear()
+        }
     }
-
-    override fun getItemCount() = items.size
 
     interface ArticleViewListener {
         fun onClickArticle(article: NewsArticle)
+    }
+
+    companion object {
+        val DIFF_CALLBACK = object : DiffUtil.ItemCallback<NewsArticle>() {
+            override fun areItemsTheSame(oldItem: NewsArticle, newItem: NewsArticle): Boolean {
+                // User properties may have changed if reloaded from the DB, but URL is fixed
+                return oldItem.url == newItem.url
+            }
+
+            override fun areContentsTheSame(oldItem: NewsArticle, newItem: NewsArticle): Boolean {
+                return oldItem == newItem
+            }
+        }
     }
 }
