@@ -1,11 +1,14 @@
 # Autodesk News
 Articles are sourced from https://newsapi.org/
 
-Application shows a list of news article outlines.
-Clicking on an article outline will show the full article.
+Application shows a list of the top news article headlines from the CNN news source.
+Clicking on an article cell will show the full article.
 
 News articles in master/detail layout.
 
-Some of the patterns used:
+The major design components used:
+* Model View Presenter
+* Dependency injection
+* Reactive (RxJava/RxKotlin)
+* Activity fragments
 * Builder pattern
-* Repository pattern
