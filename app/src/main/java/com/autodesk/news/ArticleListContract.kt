@@ -5,7 +5,6 @@ import com.autodesk.news.model.api.NewsArticle
 
 /**
  * MVP contract for list of news articles.
- * @author Moshe on 2018/12/15.
  */
 interface ArticleListContract : BaseContract {
     interface View : BaseContract.View {

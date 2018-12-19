@@ -10,7 +10,6 @@ import io.reactivex.schedulers.Schedulers
 
 /**
  * Presenter of news articles.
- * @author Moshe on 2018/12/15.
  */
 class ArticleListPresenter(private val service: NewsService) : ArticleListContract.Presenter {
 

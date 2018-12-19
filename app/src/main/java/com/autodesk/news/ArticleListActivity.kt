@@ -71,7 +71,7 @@ class ArticleListActivity : AppCompatActivity(), ArticleViewAdapter.ArticleViewL
     }
 
     override fun showArticles(articles: List<NewsArticle>) {
-        adapter.items = articles
+        adapter.submitList(articles)
     }
 
     override fun showArticleDetails(article: NewsArticle) {
