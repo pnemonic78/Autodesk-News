@@ -1,7 +1,9 @@
 package com.autodesk.news.model.api
 
 import androidx.room.ColumnInfo
+import androidx.room.Embedded
 import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 import java.util.*
 
@@ -10,25 +12,28 @@ import java.util.*
  */
 @Entity(tableName = "articles")
 data class NewsArticle(
+    @PrimaryKey
+    var articleId: Long,
+
     @SerializedName("source")
-    @ColumnInfo(name = "source")
-    val source: NewsSource,
+    @Embedded(prefix = "source")
+    var source: NewsSource,
 
     @SerializedName("author")
     @ColumnInfo(name = "author")
-    val author: String? = null,
+    var author: String? = null,
 
     @ColumnInfo(name = "title")
     @SerializedName("title")
-    val title: String,
+    var title: String,
 
     @ColumnInfo(name = "description")
     @SerializedName("description")
-    val description: String? = null,
+    var description: String? = null,
 
     @ColumnInfo(name = "url")
     @SerializedName("url")
-    val url: String? = null,
+    var url: String? = null,
 
     @ColumnInfo(name = "urlToImage")
     @SerializedName("urlToImage")

@@ -2,6 +2,7 @@ package com.autodesk.news.model.api
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
 /**
@@ -9,6 +10,9 @@ import com.google.gson.annotations.SerializedName
  */
 @Entity(tableName = "sources")
 data class NewsSource(
+    @PrimaryKey
+    var sourceId: Long,
+
     @SerializedName("id")
     @ColumnInfo(name = "id")
     val id: String?,

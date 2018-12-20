@@ -5,13 +5,11 @@ import com.autodesk.news.model.api.NewsArticle
 import io.reactivex.Flowable
 
 /**
- * Local in-memory news data source.
+ * Local database news data source.
  */
-class NewsLocalDataSource : NewsDataSource {
-
-    private val cacheArticles: Map<Long, NewsArticle> = HashMap()
+class NewsLocalDataSource(private val database: NewsDatabase) : NewsDataSource {
 
     override fun getTopHeadlines(country: String?, language: String?, sources: String?): Flowable<List<NewsArticle>> {
-        return Flowable.empty()
+        return database.articlesDao().getArticles()
     }
 }

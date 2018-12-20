@@ -5,7 +5,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.autodesk.news.data.NewsRepository
-import com.autodesk.news.di.components.DaggerApplicationComponent
 import com.autodesk.news.model.api.NewsArticle
 import kotlinx.android.synthetic.main.activity_article_list.*
 import kotlinx.android.synthetic.main.article_list.*
@@ -35,7 +34,7 @@ class ArticleListActivity : AppCompatActivity(), ArticleViewAdapter.ArticleViewL
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        DaggerApplicationComponent.create().inject(this)
+        NewsApplication.appComponent.inject(this)
 
         setContentView(R.layout.activity_article_list)
 

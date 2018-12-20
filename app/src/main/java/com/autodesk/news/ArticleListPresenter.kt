@@ -33,7 +33,7 @@ class ArticleListPresenter(private val repository: NewsRepository) : ArticleList
     }
 
     private fun fetchArticles() {
-        repository.getTopHeadlines(sources = SOURCES)
+        repository.getTopHeadlines(SOURCES)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe { view?.showArticles(it) }
