@@ -70,6 +70,10 @@ class ArticleListActivity : AppCompatActivity(), ArticleViewAdapter.ArticleViewL
         presenter.onArticleClicked(article)
     }
 
+    override fun onLastArticleReached() {
+        presenter.onLastArticleReached()
+    }
+
     override fun showArticles(articles: List<NewsArticle>) {
         adapter.submitList(articles)
     }

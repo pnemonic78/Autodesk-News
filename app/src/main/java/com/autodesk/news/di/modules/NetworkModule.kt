@@ -1,5 +1,6 @@
 package com.autodesk.news.di.modules
 
+import com.autodesk.news.BuildConfig
 import com.autodesk.news.api.NewsService
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
@@ -25,14 +26,16 @@ class NetworkModule {
     @Provides
     internal fun provideGson(): Gson {
         return GsonBuilder()
-                .setDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'")
+                .setDateFormat("yyyy-MM-dd'T'HH:mm:ss")
                 .create()
     }
 
     @Provides
     internal fun provideOkHttpClient(): OkHttpClient {
         val interceptor = HttpLoggingInterceptor()
-        interceptor.level = HttpLoggingInterceptor.Level.BODY
+        if (BuildConfig.DEBUG) {
+            interceptor.level = HttpLoggingInterceptor.Level.BODY
+        }
 
         return OkHttpClient.Builder()
                 .addInterceptor(interceptor)

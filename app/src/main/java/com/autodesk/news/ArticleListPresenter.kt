@@ -15,6 +15,8 @@ class ArticleListPresenter(private val service: NewsService) : ArticleListContra
 
     private val disposables = CompositeDisposable()
     private var view: ArticleListContract.View? = null
+    private val articles: MutableList<NewsArticle> = ArrayList()
+    private var pageIndex = 1
 
     override fun attachView(view: ArticleListContract.View) {
         this.view = view
@@ -29,17 +31,25 @@ class ArticleListPresenter(private val service: NewsService) : ArticleListContra
         view?.showArticleDetails(article)
     }
 
+    override fun onLastArticleReached() {
+        fetchArticles(pageIndex + 1)
+    }
+
     override fun refreshArticles() {
+        articles.clear()
         fetchArticles()
     }
 
-    private fun fetchArticles() {
-        service.getTopHeadlines(sources = SOURCES)
+    private fun fetchArticles(page: Int = 1) {
+        service.getTopHeadlines(sources = SOURCES, page = page)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe { response ->
                 if (response.status == ArticlesResponse.STATUS_OK) {
-                    view?.showArticles(response.articles)
+                    pageIndex = page
+                    articles.addAll(response.articles)
+                    val newList = ArrayList(articles) //new list to force diff in adapter.
+                    view?.showArticles(newList)
                 }
             }
             .addTo(disposables)

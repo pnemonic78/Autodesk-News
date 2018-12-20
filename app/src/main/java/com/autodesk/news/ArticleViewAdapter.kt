@@ -13,7 +13,7 @@ import com.autodesk.news.model.api.NewsArticle
 class ArticleViewAdapter(
     private val listener: ArticleViewListener? = null
 ) :
-    ListAdapter<NewsArticle,ArticleViewHolder>(DIFF_CALLBACK) {
+    ListAdapter<NewsArticle, ArticleViewHolder>(DIFF_CALLBACK) {
 
     private val onClickListener: View.OnClickListener
 
@@ -37,10 +37,15 @@ class ArticleViewAdapter(
         } else {
             holder.clear()
         }
+
+        if (position + 2 >= itemCount) {
+            listener?.onLastArticleReached()
+        }
     }
 
     interface ArticleViewListener {
         fun onClickArticle(article: NewsArticle)
+        fun onLastArticleReached()
     }
 
     companion object {
